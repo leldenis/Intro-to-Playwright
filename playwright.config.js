@@ -1,18 +1,24 @@
-
+require('dotenv').config();
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
-  testDir: './e2e', // Шлях до вашої папки з тестами
-  testMatch: '**/*.spec.js', // Шаблон для пошуку тестів
-  fullyParallel: true, // запускати тести паралельно
-  forbidOnly: !!process.env.CI, // заборонити test.only на CI
-  retries: process.env.CI ? 2 : 0, // ретраї на CI
-  workers: process.env.CI ? 1 : undefined, // кількість воркерів
-  reporter: 'html', // репортер
+  testDir: './e2e',
+  testMatch: '**/*.spec.js',
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: 'html',
+
   use: {
-    // baseURL: 'https://your-test-site.com', // базова URL
-    trace: 'on-first-retry', // трейси для дебагу
+    baseURL: process.env.BASE_URL,
+    httpCredentials: {
+      username: process.env.BASIC_AUTH_USER,
+      password: process.env.BASIC_AUTH_PASS
+    },
+    trace: 'on-first-retry',
   },
+
   projects: [
     {
       name: 'chromium',
