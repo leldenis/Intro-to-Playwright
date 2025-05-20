@@ -6,7 +6,7 @@ test.describe('User Registration', () => {
 
   test.beforeEach(async ({ page }) => {
     registrationPage = new RegistrationPage(page);
-    await registrationPage.navigate('https://guest:welcome2qauto@qauto.forstudy.space');
+    await registrationPage.navigate('/');
     await registrationPage.openRegistrationModal();
   });
 
