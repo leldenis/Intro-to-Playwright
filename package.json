@@ -1,14 +1,24 @@
 {
-  "name": "intro-to-playwright",
+  "name": "your-project-name",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.19"
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "test:update-snapshots": "playwright test --update-snapshots",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:mobile": "playwright test --config=playwright.mobile.config.ts",
+    "test:desktop": "playwright test --config=playwright.desktop.config.ts",
+    "install:browsers": "playwright install",
+    "codegen": "playwright codegen"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.42.1"
   }
 }
