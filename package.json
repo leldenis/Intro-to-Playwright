@@ -5,6 +5,8 @@
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:chrome": "playwright test --project=chromium",
+    "test:reg": "playwright test --project=chromium e2e/registration.spec.js",
+    "test:reg-ui": "playwright test --project=chromium --ui e2e/registration.spec.js",
     "test:firefox": "playwright test --project=firefox",
     "test:webkit": "playwright test --project=webkit",
     "test:debug": "playwright test --debug",

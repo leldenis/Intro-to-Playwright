@@ -2,7 +2,8 @@
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
-  testDir: '/e2e', // де знаходяться тести
+  testDir: './e2e', // Шлях до вашої папки з тестами
+  testMatch: '**/*.spec.js', // Шаблон для пошуку тестів
   fullyParallel: true, // запускати тести паралельно
   forbidOnly: !!process.env.CI, // заборонити test.only на CI
   retries: process.env.CI ? 2 : 0, // ретраї на CI
