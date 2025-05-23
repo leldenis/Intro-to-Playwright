@@ -20,7 +20,7 @@ require('dotenv').config();
   await page.locator('button:has-text("Login")').click();
 
   await page.waitForURL('**/panel/garage');
-  await context.storageState({ path: 'e2e/auth/storageState.json' });
+  await context.storageState({ path: 'e2e/.auth/storageState.json' });
 
   await browser.close();
 })();
