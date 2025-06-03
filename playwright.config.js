@@ -1,14 +1,16 @@
-require('dotenv').config();
-const { defineConfig, devices } = require('@playwright/test');
+import { defineConfig, devices } from '@playwright/test';
+import 'dotenv/config'; 
 
-module.exports = defineConfig({
+export default defineConfig({ 
   testDir: './e2e',
   testMatch: '**/*.spec.js',
-  fullyParallel: true,
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
+
+  globalSetup: './e2e/auth/globalSetup.js',
 
   use: {
     baseURL: process.env.BASE_URL,
