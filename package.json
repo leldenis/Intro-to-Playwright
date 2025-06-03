@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "playwright test",
+    "test:placeholder": "playwright test e2e/api/jsonplaceholder.spec.js --project=chromium",
     "test:api:cars": "playwright test --project=chromium e2e/api/car-creation.spec.js",
     "test:mock": "playwright test --project=chromium e2e/profile-mock-data.spec.js",
     "test:headed": "playwright test --headed",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "@playwright/test": "^1.42.1",
+    "axios": "^1.9.0",
     "dotenv": "^16.5.0"
   }
 }
