@@ -1,6 +1,6 @@
-const base = require('@playwright/test');
+import { test as base } from '@playwright/test';
 
-exports.test = base.test.extend({
+export const test = base.test.extend({
   userGaragePage: async ({ browser }, use) => {
     const context = await browser.newContext({
       storageState: 'e2e/auth/storageState.json'

@@ -1,5 +1,5 @@
-const { test, expect } = require('@playwright/test');
-const RegistrationPage = require('../e2e/auth/registrationPage');
+import { test, expect } from '@playwright/test';
+import RegistrationPage from './auth/registrationPage.js';
 
 test.describe('User Registration', () => {
   let registrationPage;

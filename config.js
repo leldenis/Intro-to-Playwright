@@ -1,4 +1,4 @@
-require('dotenv').config();
+import 'dotenv/config';
 
 module.exports = {
   baseUrl: process.env.BASE_URL,
@@ -7,3 +7,7 @@ module.exports = {
     password: process.env.BASIC_AUTH_PASS
   }
 };
+
+
+
+export default config;

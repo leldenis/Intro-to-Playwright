@@ -1,5 +1,5 @@
-const { expect } = require('@playwright/test');
-const BasePage = require('../pages/basePage');
+import { expect } from '@playwright/test';
+import BasePage from '../pages/basePage.js';
 
 class RegistrationPage extends BasePage {
   constructor(page) {
@@ -53,4 +53,4 @@ class RegistrationPage extends BasePage {
   }
 }
 
-module.exports = RegistrationPage;
+export default RegistrationPage;
