@@ -11,7 +11,7 @@ on:
 jobs:
   playwright-test:
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.39.0-jammy
+    container: mcr.microsoft.com/playwright:v1.52.0-jammy
 
     steps:
       - name: Checkout code
